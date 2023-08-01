@@ -1,4 +1,12 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
-PROJECT(test)
-ADD_EXECUTABLE(TEST1 test1.cpp)
-TARGET_LINK_LIBRARIES(TEST1 simde_hdr)
+PROJECT(test_simde)
+ENABLE_TESTING()
+ADD_EXECUTABLE(TEST_${PROJECT_NAME}
+               t1.cpp
+               )
+TARGET_LINK_LIBRARIES(TEST_${PROJECT_NAME} PRIVATE gtest gtest_main simde)
+#########################################################################
+ADD_EXECUTABLE(BENCH_${PROJECT_NAME}
+               b1.cpp
+               )
+TARGET_LINK_LIBRARIES(BENCH_${PROJECT_NAME} PRIVATE ${ATOMICS_LIBRARIES} benchmark simde)
