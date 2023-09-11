@@ -21,6 +21,8 @@ ELSE ()
         -Werror=format-security
         -Werror=implicit-function-declaration
         -Werror=init-self #警告使用自身初始化的未初始化变量。请注意，此选项只能与 -Wuninitialized 选项一起使用。
+        -Winit-self #警告使用自身初始化的未初始化变量。请注意，此选项只能与 -Wuninitialized 选项一起使用。
+                    #This warning is enabled by -Wall in C++.
         -Wuninitialized
         -Werror=missing-include-dirs #如果用户提供的包含目录不存在，则发出警告。对于 C、C++、Objective-C 和 Objective-C++，此选项默认禁用。
         -Werror=missing-prototypes #在 C 中，对于先前具有非原型声明的函数不会发出警告；使用 -Wmissing-prototypes 来检测丢失的原型。在 C++ 中，不会对函数模板、内联函数或匿名命名空间中的函数发出警告。
@@ -29,7 +31,6 @@ ELSE ()
         -Wformat-security
         #-Wignored-qualifiers #如果函数的返回类型具有类型限定符（例如 const ），则发出警告。对于 ISO C，此类类型限定符无效，因为函数返回的值不是左值。对于 C++，仅针对标量类型或 void 发出警告。 ISO C 禁止在函数定义上限定 void 返回类型，因此即使没有此选项，此类返回类型也始终会收到警告。
                              #此警告也由 -Wextra 启用。
-        -Winit-self
         -Winvalid-pch
         -Wlogical-op
         -Wmissing-declarations
