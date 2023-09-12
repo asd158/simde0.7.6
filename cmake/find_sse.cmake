@@ -67,7 +67,7 @@ FUNCTION(CHECK_FOR_SSE)
     ENDIF ()
     ###############################################################################################################
     IF (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG)
-        SET(CMAKE_REQUIRED_FLAGS "-msse4.2")
+        SET(CMAKE_REQUIRED_FLAGS "-msse4.2") #CMAKE_REQUIRED_FLAGS是给CHECK_CXX_SOURCE_RUNS用的
     ENDIF ()
     CHECK_CXX_SOURCE_RUNS("
     #include <emmintrin.h>
