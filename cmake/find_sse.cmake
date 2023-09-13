@@ -219,7 +219,7 @@ FUNCTION(CHECK_FOR_SSE)
             STRING(APPEND SSE_FLAGS " -ffloat-store")
         ENDIF ()
 
-        IF (PCL_ENABLE_MARCHNATIVE AND (NOT CMAKE_CROSSCOMPILING))
+        IF ((NOT CMAKE_CROSSCOMPILING))
             IF (HAVE_MARCH)
                 STRING(APPEND SSE_FLAGS " -march=native")
             ELSE ()
